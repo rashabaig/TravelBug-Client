@@ -21,14 +21,7 @@ class Contribute extends Component {
 	submitNewCountry() {
 		axios
 			.post(URL, {
-				name: this.state.name,
-				popularCities: this.state.popularCities,
-				attractions: this.state.attractions,
-				popularFoods: this.state.popularFoods,
-				languagesSpoken: this.state.languagesSpoken,
-				climate: this.state.climate,
-				activities: this.state.activities,
-				images: this.state.images
+				headers: { 'Content-Type': 'multipart/form-data' }
 			})
 			.then(function(response) {
 				console.log(response);
@@ -48,7 +41,7 @@ class Contribute extends Component {
 			<div className="main">
 				<h1 className="white red">Dont see a country listed? Share what you know!</h1>
 				<div className="form">
-					<form>
+					<form action="http://localhost:3001/countries/upload" method="post" encType="multipart/form-data">
 						<h3>Add a new country to Travel Bug's database</h3>
 						<div>
 							<input
