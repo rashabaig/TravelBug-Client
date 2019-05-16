@@ -8,18 +8,11 @@ class Search extends Component {
 			searchInput: ''
 		};
 		this.handleSearchInput = this.handleSearchInput.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	handleSearchInput(event) {
 		this.setState({ searchInput: event.target.value });
 	}
-	handleSubmit(evt) {
-		// do the filtering
-		// if there's a match
-		// store the thing to be rendered in a variable
-	}
 	render() {
-		//filter of props being passed into search and match to input
 		let selectCountry = this.props.countriesData.filter((country) => country.name === this.state.searchInput);
 		console.log(selectCountry);
 		let countryHTML;
@@ -30,11 +23,15 @@ class Search extends Component {
 			countryHTML = <Read match={match} countriesData={selectCountry} />;
 		}
 		return (
-			<div>
-				<h1>Search by Country Name</h1>
+			<div className="center">
+				<h1 className="searchHeading">Search by Country Name</h1>
 				<form>
-					<input type="text" placeholder="country name" onChange={this.handleSearchInput} />
-					<input type="submit" value="submit" onClick={this.handleSubmit} />
+					<input
+						className="searchCountryField"
+						type="text"
+						placeholder="country name here"
+						onChange={this.handleSearchInput}
+					/>
 				</form>
 				{countryHTML}
 			</div>

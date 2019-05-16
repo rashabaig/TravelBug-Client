@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import './Home.css';
+import ladybug from './ladybug.png';
 
 class Home extends Component {
 	render() {
 		return (
-			<div>
-				<h1>Travel Bug</h1>
-				<h3>Explore.Plan.Go.</h3>
+			<div className="mainTitleContainer">
+				<h1 className="mainTitle">
+					Travel Bug<img src={ladybug} />
+				</h1>
+				<h4>Explore.Plan.Go.</h4>
 			</div>
 		);
 	}

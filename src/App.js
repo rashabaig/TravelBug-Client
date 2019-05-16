@@ -1,13 +1,17 @@
 // import React from 'react';
 import './App.css';
+import './index.css';
 import { Route, Link, Switch } from 'react-router-dom';
 import Contribute from './Components/Contribute';
 import Browse from './Components/Browse';
 import Search from './Components/Search';
 import Read from './Components/Read';
 import Home from './Components/Home';
+import Edit from './Components/Edit';
+import Update from './Components/Update';
 import React, { Component } from 'react';
 import axios from 'axios';
+
 const URL = 'http://localhost:3001/countries/all';
 
 class App extends Component {
@@ -38,6 +42,7 @@ class App extends Component {
 					<Link to="/browse">Browse</Link>
 					<Link to="/search">Search</Link>
 					<Link to="/contribute">Contribute</Link>
+					<Link to="/edit">Edit</Link>
 				</nav>
 				<main>
 					<Switch>
@@ -55,13 +60,24 @@ class App extends Component {
 								<Search {...routerProps} countriesData={this.state.countriesData} />
 							)}
 						/>
+						<Route
+							exact
+							path="/edit"
+							render={(routerProps) => <Edit {...routerProps} countriesData={this.state.countriesData} />}
+						/>
+						<Route
+							exact
+							path="/edit/:name"
+							render={(routerProps) => (
+								<Update {...routerProps} countriesData={this.state.countriesData} />
+							)}
+						/>
+
 						<Route exact path="/contribute" render={(routerProps) => <Contribute {...routerProps} />} />
 						<Route
 							exact
 							path="/browse/:name"
-							render={(routerProps) => (
-								<Read {...routerProps} countriesData={this.state.countriesData} delete={this.delete} />
-							)}
+							render={(routerProps) => <Read {...routerProps} countriesData={this.state.countriesData} />}
 						/>
 						<Route exact path="/" render={(routerProps) => <Home {...routerProps} />} />
 					</Switch>

@@ -1,0 +1,21 @@
+.mainTitle {
+	/* margin-top: 15%; */
+	font-size: 60px;
+	padding-left: 15%;
+}
+h4 {
+	font-size: 20px;
+	margin-right: 10%;
+	color: rgb(131, 10, 10);
+	margin-bottom: 8%;
+}
+img {
+	text-align: right;
+}
+.mainTitleContainer {
+	margin-top: 15%;
+	border: 5px solid gray;
+	border-radius: 8px;
+	width: 40%;
+	margin-left: 30%;
+}

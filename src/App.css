@@ -1,33 +1,47 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+nav {
+	display: flex;
+	justify-content: space-around;
+	background-color: rgb(57, 52, 52);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+	font-weight: 900;
 }
-
-.App-link {
-  color: #61dafb;
+body {
+	font-family: 'Quicksand', sans-serif;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.browseHeadings {
+	color: rgb(57, 52, 52);
+	text-align: center;
+}
+.readContainer {
+	display: flex;
+	/* flex-wrap: wrap; */
+	justify-content: center;
+	justify-content: space-evenly;
+}
+.browseTitle {
+	color: rgb(131, 10, 10);
+	font-size: 40px;
+	font-weight: 900em;
+}
+.center {
+	margin: 0 auto;
+	text-align: center;
+}
+.searchCountryField {
+	height: 75px;
+	width: 400px;
+	font-size: 30px;
+	font-style: italic;
+	text-align: center;
+}
+.searchHeading {
+	margin-top: 5%;
 }

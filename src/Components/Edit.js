@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class Browse extends Component {
+class Edit extends Component {
+	// delete() {
+	//     axios.delete(`http://localhost:3001/countries/${}`)
+	//   }
 	render() {
 		console.log(this.props.countriesData);
 		let allCountries = this.props.countriesData.map((country, id) => {
 			return (
-				<Link to={'/browse/' + country.name}>
+				<Link to={'/edit/' + country.name}>
 					<div className="country" key={id}>
 						<h2 className="browseHeadings">{country.name}</h2>
 					</div>
@@ -15,11 +18,11 @@ class Browse extends Component {
 		});
 		return (
 			<div>
-				<h2 className="browseHeadings browseTitle">Browse Countries</h2>
-				<div>{allCountries}</div>
+				<h2 className="browseHeadings browseTitle">Update Countries</h2>
+				{allCountries}
 			</div>
 		);
 	}
 }
 
-export default Browse;
+export default Edit;
