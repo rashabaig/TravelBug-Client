@@ -1,15 +1,39 @@
 import React, { Component } from 'react';
-import Browse from './Browse';
-
+import axios from 'axios';
+// const URL = 'http://localhost:3001/countries/';
 class Read extends Component {
-	// constructor(props) {
-	// 	super(props);
+	constructor(props) {
+		super(props);
+		this.state = {
+			nothing: ''
+		};
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+	handleSubmit(event) {
+		console.log('Read: handleSubmit');
+		let selectCountry = this.props.countriesData.filter((country) => country.name === this.props.match.params.name);
+		const URL = `http://localhost:3001/countries/${selectCountry[0]._id}`;
+		// let deleteId = selectCountry[0]._id;
+		axios.delete(URL);
+	}
+	// deleteCountry(event) {
+	//     console.log('Read: deleteCountry');
+	//     let selectCountry = this.props.countriesData.filter((country) => country.name === this.props.match.params.name);
+	// 	this.props.delete(selectCountry[0]._id).then((res) => {
+	// 		console.log(res);
+	// 	});
 	// }
 	render() {
 		let selectCountry = this.props.countriesData.filter((country) => country.name === this.props.match.params.name);
 		if (selectCountry.length > 0) {
 			return (
 				<div>
+					<div>
+						<h1>
+							{selectCountry[0].name}{' '}
+							<input type="submit" value="delete country" onClick={this.handleSubmit} />
+						</h1>
+					</div>
 					<h1>Popular Cities</h1>
 					<ul>
 						{selectCountry[0].popularCities.map((city) => {
