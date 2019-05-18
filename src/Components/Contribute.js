@@ -19,6 +19,9 @@ class Contribute extends Component {
 		this.handleInput = this.handleInput.bind(this);
 	}
 	submitNewCountry() {
+		// declare a variable and give it the value of this.state.images
+		// create an if/else statement that sets the attribute of your form - one for each of the unique urls you have linking to the backend
+		// beacuse you have created a variable that holds the value of this.state.images, you can use this variable in the if/else statement with the ===
 		axios
 			.post(URL, {
 				headers: { 'Content-Type': 'multipart/form-data' }
@@ -33,7 +36,7 @@ class Contribute extends Component {
 	handleInput(evt) {
 		let target = evt.target;
 		let value = target.value;
-		let name = target.name;
+		let name = target.name.toLowerCase();
 		this.setState({ [name]: value });
 	}
 	render() {

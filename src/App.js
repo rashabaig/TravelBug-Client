@@ -11,6 +11,7 @@ import Edit from './Components/Edit';
 import Update from './Components/Update';
 import React, { Component } from 'react';
 import axios from 'axios';
+import ladybug from './ladybug.png';
 
 const URL = 'http://localhost:3001/countries/all';
 
@@ -38,7 +39,9 @@ class App extends Component {
 		return (
 			<div>
 				<nav>
-					<Link to="/">Travel Bug</Link>
+					<Link to="/">
+						Travel Bug <img id="smallBug" src={ladybug} />
+					</Link>
 					<Link to="/browse">Browse</Link>
 					<Link to="/search">Search</Link>
 					<Link to="/contribute">Contribute</Link>

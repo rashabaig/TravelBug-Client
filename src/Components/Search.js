@@ -10,7 +10,7 @@ class Search extends Component {
 		this.handleSearchInput = this.handleSearchInput.bind(this);
 	}
 	handleSearchInput(event) {
-		this.setState({ searchInput: event.target.value });
+		this.setState({ searchInput: event.target.value.toLowerCase() });
 	}
 	render() {
 		let selectCountry = this.props.countriesData.filter((country) => country.name === this.state.searchInput);
@@ -24,7 +24,7 @@ class Search extends Component {
 		}
 		return (
 			<div className="center">
-				<h1 className="searchHeading">Search by Country Name</h1>
+				<h1 className="searchHeading ">Search by Country Name</h1>
 				<form>
 					<input
 						className="searchCountryField"
